@@ -1,10 +1,8 @@
 const axios = require('axios');
 require('dotenv').config();
-
 const WINDOW_SIZE = 5;
 let window = [];
 let set = new Set();
-
 async function fetchNumbersFromAPI() {
   return new Promise((resolve) => {
     // Simulate API data
@@ -12,7 +10,6 @@ async function fetchNumbersFromAPI() {
     resolve(mockData.numbers);
   });
 }
-
 function updateWindow(numbers) {
   for (let num of numbers) {
     if (!set.has(num)) {
@@ -26,7 +23,6 @@ function updateWindow(numbers) {
   }
   return window;
 }
-
 module.exports = {
   fetchNumbersFromAPI,
   updateWindow

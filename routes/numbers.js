@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
 const { fetchNumbersFromAPI, updateWindow } = require('../services/numberservice');
-
 router.get('/', async (req, res) => {
   try {
     const numbers = await fetchNumbersFromAPI();
@@ -11,5 +10,4 @@ router.get('/', async (req, res) => {
     res.status(408).json({ error: 'API Timeout or Error' });
   }
 });
-
 module.exports = router;
